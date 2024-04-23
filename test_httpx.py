@@ -14,9 +14,14 @@ def test_404(httpx_mock: HTTPXMock):
 
 def test_smth(httpx_mock: HTTPXMock):
     httpx_mock.add_response(
+        method='GET',
+        url='https://api.hh.ru/vacancies',
         status_code=200,
         match_headers={'Content-Type': 'application/json; charset=UTF-8'},
     )
     with httpx.Client() as client:
-        response = client.get('https://api.hh.ru/vacancies')
+        response = client.get(
+            'https://api.hh.ru/vacancies',
+            headers={'Content-Type': 'application/json; charset=UTF-8'}
+        )
 
