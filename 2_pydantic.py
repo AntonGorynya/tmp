@@ -1,5 +1,6 @@
 from datetime import datetime
-from pydantic import BaseModel, validator, BaseSettings
+from pydantic import BaseModel, validator, BaseSettings, ConfigDict
+
 from string import digits
 from environs import Env
 import json
@@ -15,6 +16,9 @@ class SubModel(BaseModel):
 
 
 class Settings(BaseSettings):
+    class Config:
+        env_nested_delimiter = '__'
+
     auth_key: str
     api_key: str
     sub_model: SubModel
@@ -79,10 +83,6 @@ external_data = {
                  }
             ]
         },
-        # {
-        #     'id': 2,
-        #     'goods': []
-        # },
     ],
 }
 user = User(**external_data)
