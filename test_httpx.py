@@ -12,7 +12,7 @@ def test_404(httpx_mock: HTTPXMock):
         assert client.get("https://api.hh.ru/dontexist").status_code == 404
 
 
-def test_smth(httpx_mock: HTTPXMock):
+def test_type_response(httpx_mock: HTTPXMock):
     httpx_mock.add_response(
         method='GET',
         url='https://api.hh.ru/vacancies',
@@ -24,4 +24,3 @@ def test_smth(httpx_mock: HTTPXMock):
             'https://api.hh.ru/vacancies',
             headers={'Content-Type': 'application/json; charset=UTF-8'}
         )
-
