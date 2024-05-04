@@ -3,7 +3,7 @@
 - [Библиотека HTTPX](./test_httpx.py)
   - Отправить GET запрос с JSON
   - Отправить POST запрос с JSON
-- [Библиотека Pydantic v1](./2_pydantic.py)
+- [Библиотека Pydantic v1](2_pydantic/2_pydantic.py)
   - Написать вложенную схему валидации данных, получить ошибки валидации
   - Экспортировать данные в формат JSON с помощью Pydantic
   - Прочитать данные из JSON с помощью Pydantic
